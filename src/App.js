@@ -15,6 +15,7 @@ import {
 import Spinner from "./components/UI/Spinner/Spinner";
 import Bubbles from "./containers/Bubbles";
 import AppStyles from './App.module.css';
+import { APIKEY } from './constants/variables';
 
 const INITIAL_STATE = {
 	gifs: [],
@@ -40,7 +41,7 @@ class App extends Component {
 		});
 		try {
 			const data = await axios.get(
-				`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=ioTxJbNgaUr1DL8TVqEjAmDCeJJVwW6y&limit=1000`
+				`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${APIKEY}&limit=1000`
 			);
 			this.setState({ loading: false, gifs: data.data.data });
 		} catch (err) {
