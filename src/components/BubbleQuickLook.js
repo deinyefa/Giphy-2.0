@@ -2,7 +2,7 @@ import React from "react";
 
 import BQLookStyles from "./BQLook.module.css";
 
-const BubbleQuickLook = ({ gif, title, hue }) => (
+const BubbleQuickLook = ({ gif, title, hue, url }) => (
 	<div
 		className={BQLookStyles.BubbleQuicklookWrapper}
 		style={{
@@ -10,7 +10,9 @@ const BubbleQuickLook = ({ gif, title, hue }) => (
 			borderBottom: `10px solid ${hue}`,
 			width: "400px",
 		}}>
-		<img src={gif} alt={title} style={{ width: "100%" }} />
+		<a href={url} target="_blank" rel="noopener noreferrer">
+			<img src={gif} alt={title} style={{ width: "100%" }} />
+		</a>
 		<h4>{title}</h4>
 		<span
 			className={BQLookStyles.Arrow}

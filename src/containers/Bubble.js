@@ -13,30 +13,29 @@ class Bubble extends Component {
 		const { hover } = this.state;
 
 		return (
-			// <div>
-				<div
-					className={`${BubbleStyles.Bubble} ${circle.bubbleClass}`}
-					style={{
-						backgroundColor: circle.hue,
-						borderColor: hover ? circle.hue : "white",
-						width: `${circle.size}px`,
-						height: `${circle.size}px`,
-						left: `${circle.x}px`,
-						top: `${circle.y}px`,
-						animationDuration: `${circle.animationDuration}s`,
-					}}
-					onMouseEnter={() => this.setState({ hover: true })}
-					onMouseLeave={() => this.setState({ hover: false })}>
-					{hover ? (
-						<BubbleQuickLook
-							hue={circle.hue}
-							gif={circle.gif}
-							title={circle.title}
-							hover={hover}
-						/>
-					) : null}
-				</div>
-			// </div>
+			<div
+				className={`${BubbleStyles.Bubble} ${circle.bubbleClass}`}
+				style={{
+					backgroundColor: circle.hue,
+					borderColor: hover ? circle.hue : "white",
+					width: `${circle.size}px`,
+					height: `${circle.size}px`,
+					left: `${circle.x}px`,
+					top: `${circle.y}px`,
+					animationDuration: `${circle.animationDuration}s`,
+				}}
+				onMouseEnter={() => this.setState({ hover: true })}
+				onMouseLeave={() => this.setState({ hover: false })}>
+				{hover ? (
+					<BubbleQuickLook
+						hue={circle.hue}
+						gif={circle.gif}
+						title={circle.title}
+						hover={hover}
+						url={circle.gifURL}
+					/>
+				) : null}
+			</div>
 		);
 	}
 }

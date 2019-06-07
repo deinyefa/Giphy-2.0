@@ -8,7 +8,7 @@ class Bubbles extends Component {
 	};
 
 	componentDidMount = () => {
-		const { gifs } = this.props;
+    const { gifs } = this.props;
 
 		let circles = [];
 		const colors = ["#65BACD", "#F3382C", "#1A3567", "#82B8AE"];
@@ -19,7 +19,8 @@ class Bubbles extends Component {
 			posY,
 			windowWidth = 7000,
 			windowHeight = 5000,
-			hue,
+      hue,
+      gifURL,
 			bubbleClass;
 		let gif, title, id;
 
@@ -34,7 +35,8 @@ class Bubbles extends Component {
 				];
 			animationDuration = Math.floor(Math.random() * (90 - 40) + 40);
 			gif = gifs[i].images.fixed_height.url;
-			title = gifs[i].title;
+      title = gifs[i].title;
+      gifURL = gifs[i].url;
 			id = gifs[i].id;
 
 			// push to local circles array
@@ -47,7 +49,8 @@ class Bubbles extends Component {
 				animationDuration,
 				gif,
 				title,
-				id,
+        id,
+        gifURL
 			});
 		}
 
