@@ -1,0 +1,11 @@
+.App .Form {
+	position: fixed;
+	z-index: 1;
+	width: 500px;
+	top: 10px;
+	left: 0;
+  right: 0;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 4px;
+}
