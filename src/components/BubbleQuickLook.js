@@ -11,9 +11,8 @@ const BubbleQuickLook = ({ gif, title, hue, url }) => (
 			width: "400px",
 		}}>
 		<a href={url} target="_blank" rel="noopener noreferrer">
-			<img src={gif} alt={title} style={{ width: "100%" }} />
+			<img src={gif} alt={title} />
 		</a>
-		<h4>{title}</h4>
 		<span
 			className={BQLookStyles.Arrow}
 			style={{ borderColor: `transparent transparent ${hue} ${hue}` }}
